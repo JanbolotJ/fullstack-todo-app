@@ -44,6 +44,7 @@ export default function LoginPage() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleLogin}>Войти</button>
+      <button onClick={() => router.push("/auth/register")}>Регистрация</button>
     </div>
   );
 }

@@ -1,0 +1,38 @@
+
+services:
+  db:
+    image: postgres:15
+    container_name: todo-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: johnniedeveloper
+      POSTGRES_DB: todo_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  backend:
+    build: ./todo-backend
+    container_name: todo-backend
+    restart: always
+    env_file:
+      - ./todo-backend/.env
+    depends_on:
+      - db
+    ports:
+      - "5001:5001"
+    command: sh -c "npx prisma migrate deploy && npm run dev"
+
+  frontend:
+    build: ./todo-frontend
+    container_name: todo-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  db-data:
