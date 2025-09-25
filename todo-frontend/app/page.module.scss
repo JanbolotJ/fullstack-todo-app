@@ -1,0 +1,132 @@
+.header {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    transition: 0.5s;
+
+    &__title {
+        transition: 0.2s;
+    }
+
+    &__title:hover {
+        cursor: pointer;
+        color: rgb(28, 96, 155);
+        scale: 1.1;
+    }
+
+    &__exit {
+        transition: 0.5s;
+        background: rgb(236, 100, 100);
+        padding: 5px 20px;
+        border-radius: 10px;
+        color: whitesmoke;
+
+        &:hover {
+            cursor: pointer;
+            scale: 1.1;
+            border-radius: 15px;
+            background: red;
+        }
+    }
+}
+
+.main {
+    width: 80%;
+    margin: auto;
+
+    &__form {
+        margin: auto;
+        display: flex;
+        // flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+
+        &__input {
+            padding: 5px 10px;
+            margin-right: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            outline: none;
+            width: 50%;
+        }
+
+        &__addClick {
+            transition: 0.5s;
+            background: rgb(126, 182, 42);
+            padding: 5px 20px;
+            border-radius: 10px;
+            color: whitesmoke;
+
+            &:hover {
+                cursor: pointer;
+                scale: 1.1;
+                border-radius: 15px;
+                background: rgb(88, 155, 26);
+            }
+        }
+
+    }
+
+    &__todos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__todo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            transition: 0.5s;
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .first_button {
+                transition: 0.5s;
+                background: rgb(42, 114, 182);
+                padding: 5px 20px;
+                border-radius: 10px;
+                color: whitesmoke;
+                border: none;
+
+                &:hover {
+                    cursor: pointer;
+                    scale: 1.05;
+                    border-radius: 15px;
+                    background: rgb(26, 106, 155);
+                }
+            }
+
+            .second_button {
+                transition: 0.5s;
+                background: rgb(236, 100, 100);
+                padding: 5px 20px;
+                border-radius: 10px;
+                color: whitesmoke;
+                border: none;
+
+                &:hover {
+                    cursor: pointer;
+                    scale: 1.05;
+                    border-radius: 15px;
+                    background: red;
+                }
+            }
+        }
+    }
+}
